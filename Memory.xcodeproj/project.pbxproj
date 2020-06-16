@@ -15,6 +15,7 @@
 		4CEDBDA6249902CF00813B30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDBDA4249902CF00813B30 /* LaunchScreen.storyboard */; };
 		4CEDBDAE2499031000813B30 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDAD2499031000813B30 /* CardView.swift */; };
 		4CEDBDB324991FCF00813B30 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDB224991FCF00813B30 /* MemoryGame.swift */; };
+		4CEDBDB52499217400813B30 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDB42499217400813B30 /* EmojiMemoryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4CEDBDA7249902CF00813B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEDBDAD2499031000813B30 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4CEDBDB224991FCF00813B30 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		4CEDBDB42499217400813B30 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		4CEDBDB024991F0B00813B30 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDBDB42499217400813B30 /* EmojiMemoryGame.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				4CEDBDB324991FCF00813B30 /* MemoryGame.swift in Sources */,
 				4CEDBDAE2499031000813B30 /* CardView.swift in Sources */,
 				4CEDBD9E249902CB00813B30 /* ContentView.swift in Sources */,
+				4CEDBDB52499217400813B30 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
