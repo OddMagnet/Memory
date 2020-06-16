@@ -10,7 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            ForEach(0 ..< 6) { _ in
+                HStack {
+                    ForEach(0 ..< 4) { _ in
+                        CardView(isFaceUp: false)
+                    }
+                }
+            }
+        }
+        .padding()
+        .foregroundColor(Color.orange)
+        .font(.largeTitle)
     }
 }
 
