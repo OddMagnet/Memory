@@ -9,12 +9,14 @@
 import SwiftUI
 
 class EmojiMemoryGame {
+    // instance of the games model
     private var memoryGame = createMemoryGame()
     
+    // create an instance of the games model
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻", "🎃"]
+        let emojis = ["👻", "🎃", "🕷"]
         
-        return MemoryGame<String>(numberOfPairs: 2) { index in
+        return MemoryGame<String>(numberOfPairs: emojis.count) { index in
             return emojis[index]
         }
     }
