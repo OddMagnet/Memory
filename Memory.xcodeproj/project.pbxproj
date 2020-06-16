@@ -16,6 +16,7 @@
 		4CEDBDAE2499031000813B30 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDAD2499031000813B30 /* CardView.swift */; };
 		4CEDBDB324991FCF00813B30 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDB224991FCF00813B30 /* MemoryGame.swift */; };
 		4CEDBDB52499217400813B30 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDB42499217400813B30 /* EmojiMemoryGame.swift */; };
+		4CEDBDB7249929F200813B30 /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDBDB6249929F200813B30 /* MemoryGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4CEDBDAD2499031000813B30 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4CEDBDB224991FCF00813B30 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		4CEDBDB42499217400813B30 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		4CEDBDB6249929F200813B30 /* MemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,12 @@
 		4CEDBD98249902CB00813B30 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDBD9D249902CB00813B30 /* ContentView.swift */,
 				4CEDBDAF24991EFA00813B30 /* Views */,
 				4CEDBDB024991F0B00813B30 /* ViewModels */,
 				4CEDBDB124991F1600813B30 /* Models */,
 				4CEDBD99249902CB00813B30 /* AppDelegate.swift */,
 				4CEDBD9B249902CB00813B30 /* SceneDelegate.swift */,
-				4CEDBD9D249902CB00813B30 /* ContentView.swift */,
-				4CEDBDAD2499031000813B30 /* CardView.swift */,
 				4CEDBD9F249902CF00813B30 /* Assets.xcassets */,
 				4CEDBDA4249902CF00813B30 /* LaunchScreen.storyboard */,
 				4CEDBDA7249902CF00813B30 /* Info.plist */,
@@ -88,6 +89,8 @@
 		4CEDBDAF24991EFA00813B30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDBDAD2499031000813B30 /* CardView.swift */,
+				4CEDBDB6249929F200813B30 /* MemoryGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				4CEDBD9A249902CB00813B30 /* AppDelegate.swift in Sources */,
 				4CEDBD9C249902CB00813B30 /* SceneDelegate.swift in Sources */,
+				4CEDBDB7249929F200813B30 /* MemoryGameView.swift in Sources */,
 				4CEDBDB324991FCF00813B30 /* MemoryGame.swift in Sources */,
 				4CEDBDAE2499031000813B30 /* CardView.swift in Sources */,
 				4CEDBD9E249902CB00813B30 /* ContentView.swift in Sources */,
