@@ -20,4 +20,14 @@ struct MemoryGame<CardContent> {
     func choose(card: Card) {
         print("Card chosen: \(card)")
     }
+    
+    init(numberOfPairs: Int, cardContentFor: (Int) -> CardContent) {
+        cards = [Card]()
+        
+        for pairIndex in 0 ..< numberOfPairs {
+            let content = cardContentFor(pairIndex)
+            cards.append(Card(isFaceUp: false, isMatched: false, contentTye: content))
+            cards.append(Card(isFaceUp: false, isMatched: false, contentTye: content))
+        }
+    }
 }
