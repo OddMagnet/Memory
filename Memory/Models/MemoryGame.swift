@@ -9,10 +9,11 @@
 import Foundation
 
 struct MemoryGame<CardContent> {
-    struct Card {
-        var isFaceUp: Bool
-        var isMatched: Bool
-        var contentTye: CardContent
+    struct Card: Identifiable {
+        var isFaceUp: Bool = false
+        var isMatched: Bool = false
+        var content: CardContent
+        var id: Int
     }
     
     var cards: [Card]
@@ -26,8 +27,8 @@ struct MemoryGame<CardContent> {
         
         for pairIndex in 0 ..< numberOfPairs {
             let content = cardContentFor(pairIndex)
-            cards.append(Card(isFaceUp: false, isMatched: false, contentTye: content))
-            cards.append(Card(isFaceUp: false, isMatched: false, contentTye: content))
+            cards.append(Card(content: content, id: pairIndex * 2))      // calculate id based on pairIndex
+            cards.append(Card(content: content, id: pairIndex * 2 + 1))  // this ensures a unique id
         }
     }
 }
