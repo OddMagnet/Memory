@@ -67,7 +67,6 @@
 				4CEDBD9B249902CB00813B30 /* SceneDelegate.swift */,
 				4CEDBD9D249902CB00813B30 /* ContentView.swift */,
 				4CEDBDAD2499031000813B30 /* CardView.swift */,
-				4CEDBDB224991FCF00813B30 /* MemoryGame.swift */,
 				4CEDBD9F249902CF00813B30 /* Assets.xcassets */,
 				4CEDBDA4249902CF00813B30 /* LaunchScreen.storyboard */,
 				4CEDBDA7249902CF00813B30 /* Info.plist */,
@@ -101,6 +100,7 @@
 		4CEDBDB124991F1600813B30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDBDB224991FCF00813B30 /* MemoryGame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
