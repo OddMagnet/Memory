@@ -22,11 +22,11 @@ struct MemoryGame<CardContent> {
         print("Card chosen: \(card)")
     }
     
-    init(numberOfPairs: Int, cardContentFor: (Int) -> CardContent) {
+    init(numberOfPairs: Int, cardContentFactory: (Int) -> CardContent) {
         cards = [Card]()
         
         for pairIndex in 0 ..< numberOfPairs {
-            let content = cardContentFor(pairIndex)
+            let content = cardContentFactory(pairIndex)
             cards.append(Card(content: content, id: pairIndex * 2))      // calculate id based on pairIndex
             cards.append(Card(content: content, id: pairIndex * 2 + 1))  // this ensures a unique id
         }
