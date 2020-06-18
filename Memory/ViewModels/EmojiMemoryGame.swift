@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class EmojiMemoryGame: ObservableObject{
+class EmojiMemoryGame: ObservableObject {
     // instance of the games model
    @Published private var memoryGame = createMemoryGame()
     
