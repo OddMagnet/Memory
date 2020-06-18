@@ -18,7 +18,7 @@ struct MemoryGameView: View {
                 CardView(card: card)
                     .aspectRatio(CGFloat(2.0/3.0), contentMode: .fit)
                     .onTapGesture {
-                        self.memoryGame.choose(card: card)
+                        self.memoryGame.choose(card)
                     }
             }
         }
