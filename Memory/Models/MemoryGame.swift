@@ -30,5 +30,7 @@ struct MemoryGame<CardContent> {
             cards.append(Card(content: content, id: pairIndex * 2))      // calculate id based on pairIndex
             cards.append(Card(content: content, id: pairIndex * 2 + 1))  // this ensures a unique id
         }
+        
+        cards.shuffle()
     }
 }
