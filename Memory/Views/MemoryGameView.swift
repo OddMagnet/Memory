@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MemoryGameView: View {
     // instance of the games ViewModel
-    var memoryGame: EmojiMemoryGame
+    @ObservedObject var memoryGame: EmojiMemoryGame
     
     var body: some View {
         HStack {
