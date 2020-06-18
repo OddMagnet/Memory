@@ -24,7 +24,6 @@ struct MemoryGameView: View {
         }
         .padding()
         .foregroundColor(Color.orange)
-        .font(memoryGame.cards.count == 10 ? .title : .largeTitle)
     }
 }
 
