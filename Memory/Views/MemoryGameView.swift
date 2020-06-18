@@ -16,6 +16,7 @@ struct MemoryGameView: View {
         HStack {
             ForEach(memoryGame.cards) { card in
                 CardView(card: card)
+                    .aspectRatio(CGFloat(2.0/3.0), contentMode: .fit)
                     .onTapGesture {
                         self.memoryGame.choose(card: card)
                     }
