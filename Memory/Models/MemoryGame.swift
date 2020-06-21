@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MemoryGame<CardContent> {
+struct MemoryGame<CardContent> where CardContent: Equatable {
     struct Card: Identifiable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
@@ -17,11 +17,32 @@ struct MemoryGame<CardContent> {
     }
     
     var cards: [Card]
+    var indexOfOnlyUnmatchedFaceUpCard: Int?
     
     mutating func choose(_ card: Card) {
         print("Card chosen: \(card)")
-        if let chosenIndex = cards.index(of: card) {
-            self.cards[chosenIndex].isFaceUp.toggle()
+        // only act on cards that have an existing index, are not face up and are not already matched
+        if let chosenIndex = cards.index(of: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
+            // if there is a face up card
+            if let potentialMatchIndex = indexOfOnlyUnmatchedFaceUpCard {
+                // check if they are the same card (have the same content)
+                if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                    // a match happened
+                    cards[chosenIndex].isMatched = true
+                    cards[potentialMatchIndex].isMatched = true
+                }
+                // reset index of only unmatched and face up card to nil
+                indexOfOnlyUnmatchedFaceUpCard = nil
+            } else {
+                // if there are 0 or more face up cards, turn all face down again
+                for index in cards.indices {
+                    cards[index].isFaceUp = false
+                }
+                // then set the index of the only unmatched and face up card to the chosen one
+                indexOfOnlyUnmatchedFaceUpCard = chosenIndex
+            }
+            // finally, make sure the chosen card stays face up
+            self.cards[chosenIndex].isFaceUp = true
         }
     }
         
