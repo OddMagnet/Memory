@@ -17,32 +17,43 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     var cards: [Card]
-    var indexOfOnlyUnmatchedFaceUpCard: Int?
+    var indexOfOnlyFaceUpCard: Int? {
+        get {
+            // on get return the index of the only face up card or nil if multiple
+            let faceUpCardIndices = cards.indices.filter { cards[$0].isFaceUp }
+            if faceUpCardIndices.count == 1 {
+                return faceUpCardIndices.first
+            } else {
+                return nil
+            }
+        }
+        set {
+            // on set, only keep the card with the new index face up
+            for index in cards.indices {
+                cards[index].isFaceUp = index == newValue
+            }
+        }
+    }
     
     mutating func choose(_ card: Card) {
         print("Card chosen: \(card)")
         // only act on cards that have an existing index, are not face up and are not already matched
         if let chosenIndex = cards.index(of: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
             // if there is a face up card
-            if let potentialMatchIndex = indexOfOnlyUnmatchedFaceUpCard {
+            if let potentialMatchIndex = indexOfOnlyFaceUpCard {
                 // check if they are the same card (have the same content)
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     // a match happened
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                 }
-                // reset index of only unmatched and face up card to nil
-                indexOfOnlyUnmatchedFaceUpCard = nil
+                // make sure the just chose card stays face up
+                self.cards[chosenIndex].isFaceUp = true
             } else {
-                // if there are 0 or more face up cards, turn all face down again
-                for index in cards.indices {
-                    cards[index].isFaceUp = false
-                }
-                // then set the index of the only unmatched and face up card to the chosen one
-                indexOfOnlyUnmatchedFaceUpCard = chosenIndex
+                // set the index of the only face up card to the chosen one
+                // automatically turns all others down
+                indexOfOnlyFaceUpCard = chosenIndex
             }
-            // finally, make sure the chosen card stays face up
-            self.cards[chosenIndex].isFaceUp = true
         }
     }
         
