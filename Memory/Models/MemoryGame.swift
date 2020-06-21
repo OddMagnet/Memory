@@ -20,12 +20,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     var indexOfOnlyFaceUpCard: Int? {
         get {
             // on get return the index of the only face up card or nil if multiple
-            let faceUpCardIndices = cards.indices.filter { cards[$0].isFaceUp }
-            if faceUpCardIndices.count == 1 {
-                return faceUpCardIndices.first
-            } else {
-                return nil
-            }
+            return cards.indices.filter { cards[$0].isFaceUp }.only
         }
         set {
             // on set, only keep the card with the new index face up
