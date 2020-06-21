@@ -20,14 +20,10 @@ struct MemoryGame<CardContent> {
     
     mutating func choose(_ card: Card) {
         print("Card chosen: \(card)")
-        let chosenIndex: Int = index(of: card)
+        let chosenIndex: Int = cards.index(of: card)
         self.cards[chosenIndex].isFaceUp.toggle()
     }
-    
-    func index(of card: Card)  -> Int {
-        cards.firstIndex(where: { $0.id == card.id })!
-    }
-    
+        
     init(numberOfPairs: Int, cardContentFactory: (Int) -> CardContent) {
         cards = [Card]()
         
