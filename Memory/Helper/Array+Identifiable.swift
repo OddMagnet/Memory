@@ -1,5 +1,5 @@
 //
-//  Helper+Extensions.swift
+//  Array+Identifiable.swift
 //  Memory
 //
 //  Created by Michael Brünen on 21.06.20.
