@@ -9,7 +9,7 @@
 import SwiftUI
 
 extension Array where Element: Identifiable {
-    func index(of element: Element)  -> Int {
-        self.firstIndex(where: { $0.id == element.id })!
+    func index(of element: Element)  -> Int? {
+        self.firstIndex(where: { $0.id == element.id })
     }
 }

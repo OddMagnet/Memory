@@ -20,8 +20,9 @@ struct MemoryGame<CardContent> {
     
     mutating func choose(_ card: Card) {
         print("Card chosen: \(card)")
-        let chosenIndex: Int = cards.index(of: card)
-        self.cards[chosenIndex].isFaceUp.toggle()
+        if let chosenIndex = cards.index(of: card) {
+            self.cards[chosenIndex].isFaceUp.toggle()
+        }
     }
         
     init(numberOfPairs: Int, cardContentFactory: (Int) -> CardContent) {

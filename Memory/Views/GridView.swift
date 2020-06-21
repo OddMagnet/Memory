@@ -33,7 +33,7 @@ struct GridView<Item, ItemView>: View where Item: Identifiable, ItemView: View {
         ForEach(self.items) { item in
             self.viewForItem(item)
                 .frame(width: layout.itemSize.width, height: layout.itemSize.height)
-                .position(layout.location(ofItemAt: self.items.index(of: item)))
+                .position(layout.location(ofItemAt: self.items.index(of: item)!))
         }
     }
 
