@@ -26,8 +26,11 @@ struct CardView: View {
                     .stroke(lineWidth: edgeLineWidth)
                 Text(card.content)
             } else {
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill()
+                // only draw the card face down when it's unmatched
+                if !card.isMatched {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill()
+                }
             }
         }
         .font(Font.system(size: fontSize(for: size)))
