@@ -18,12 +18,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     var cards: [Card]
     var indexOfOnlyFaceUpCard: Int? {
-        get {
-            // on get return the index of the only face up card or nil if multiple
-            return cards.indices.filter { cards[$0].isFaceUp }.only
-        }
+        // on get return the index of the only face up card or nil if multiple
+        get { cards.indices.filter { cards[$0].isFaceUp }.only }
+        // on set, only keep the card with the new index face up
         set {
-            // on set, only keep the card with the new index face up
             for index in cards.indices {
                 cards[index].isFaceUp = index == newValue
             }
