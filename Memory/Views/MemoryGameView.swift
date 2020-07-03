@@ -30,6 +30,7 @@ struct MemoryGameView: View {
                 Text("New Game")
             })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
