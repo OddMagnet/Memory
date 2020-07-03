@@ -18,6 +18,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     var cards: [Card]
     var theme: Theme
+    var score = 0
+    var seenCards = Set<Int>()
     
     var indexOfOnlyFaceUpCard: Int? {
         // on get return the index of the only face up card or nil if multiple
@@ -25,13 +27,17 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         // on set, only keep the card with the new index face up
         set {
             for index in cards.indices {
+                // add seen cards to a set for score calculations
+                if cards[index].isFaceUp {
+                    seenCards.insert(cards[index].id)
+                }
+                // turn all cards face down, aside from the newly selected
                 cards[index].isFaceUp = index == newValue
             }
         }
     }
     
     mutating func choose(_ card: Card) {
-        print("Card chosen: \(card)")
         // only act on cards that have an existing index, are not face up and are not already matched
         if let chosenIndex = cards.index(of: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
             // if there is a face up card
@@ -41,6 +47,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                     // a match happened
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    // add score
+                    score += 2
+                } else {
+                    // no match happened
+                    if seenCards.contains(cards[chosenIndex].id)
+                        || seenCards.contains(cards[potentialMatchIndex].id) {
+                        score -= 1
+                    }
                 }
                 // make sure the just chose card stays face up
                 self.cards[chosenIndex].isFaceUp = true
