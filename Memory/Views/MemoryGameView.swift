@@ -13,15 +13,23 @@ struct MemoryGameView: View {
     @ObservedObject var memoryGame: EmojiMemoryGame
     
     var body: some View {
-        GridView(memoryGame.cards) { card in
-            CardView(card: card)
-                .onTapGesture {
-                    self.memoryGame.choose(card)
+        NavigationView {
+            VStack {
+                GridView(memoryGame.cards) { card in
+                    CardView(card: card)
+                        .onTapGesture {
+                            self.memoryGame.choose(card)
+                    }
+                    .padding(5)
+                }
             }
-            .padding(5)
+            .padding()
+            .foregroundColor(memoryGame.color)
+            .navigationBarTitle("Memory: \(memoryGame.themeName) - \(memoryGame.score)", displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: self.memoryGame.newGame) {
+                Text("New Game")
+            })
         }
-        .padding()
-        .foregroundColor(Color.orange)
     }
 }
 
