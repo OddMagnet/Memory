@@ -28,9 +28,25 @@ class EmojiMemoryGame: ObservableObject {
         memoryGame.cards
     }
     
+    var color: Color {
+        memoryGame.theme.color
+    }
+    
+    var themeName: String {
+        memoryGame.theme.name
+    }
+    
+    var score: Int {
+        memoryGame.score
+    }
+    
     // MARK: - Intents
     func choose(_ card: MemoryGame<String>.Card) {
         memoryGame.choose(card)
+    }
+    
+    func newGame() {
+        memoryGame = EmojiMemoryGame.createMemoryGame()
     }
 }
 
