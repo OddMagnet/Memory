@@ -17,6 +17,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     var cards: [Card]
+    var theme: Theme
+    
     var indexOfOnlyFaceUpCard: Int? {
         // on get return the index of the only face up card or nil if multiple
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -50,8 +52,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
         
-    init(numberOfPairs: Int, cardContentFactory: (Int) -> CardContent) {
+    init(theme: Theme, cardContentFactory: (Int) -> CardContent) {
         cards = [Card]()
+        self.theme = theme
+
+        // if theme has a prefered number of pairs, use that, else random
+        let numberOfPairs = theme.numberOfPairsToShow ?? Int.random(in: 2...5)
         
         for pairIndex in 0 ..< numberOfPairs {
             let content = cardContentFactory(pairIndex)
