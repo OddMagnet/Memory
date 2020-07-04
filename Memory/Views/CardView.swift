@@ -17,29 +17,24 @@ struct CardView: View {
         }
     }
     
+    @ViewBuilder
     private func body(for size: CGSize) -> some View {
-        ZStack {
-            if card.isFaceUp {
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(Color.white)
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(lineWidth: edgeLineWidth)
+        if card.isFaceUp || !card.isMatched {
+            ZStack {
+                PieView(startAngle: .degrees(0-90), endAngle: .degrees(110-90))
+                    .opacity(pieOpacity)
+                    .padding(piePadding)
                 Text(card.content)
-            } else {
-                // only draw the card face down when it's unmatched
-                if !card.isMatched {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .fill()
-                }
+                    .font(Font.system(size: fontSize(for: size)))
             }
+            .cardify(isFaceUp: card.isFaceUp)
         }
-        .font(Font.system(size: fontSize(for: size)))
     }
     
     // MARK: - Drawing constants
-    private let cornerRadius: CGFloat = 10.0
-    private let edgeLineWidth: CGFloat = 3
     private let fontScaling: CGFloat = 0.75
+    private let piePadding: CGFloat = 5
+    private let pieOpacity: Double = 0.5
     
     func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScaling
@@ -47,8 +42,8 @@ struct CardView: View {
     
 }
 
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(isFaceUp: true)
-//    }
-//}
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CardView(card: MemoryGame<String>.Card(isFaceUp: true, isMatched: false, content: "🎓", id: 1))
+    }
+}
