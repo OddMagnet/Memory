@@ -18,7 +18,9 @@ struct MemoryGameView: View {
                 GridView(memoryGame.cards) { card in
                     CardView(card: card)
                         .onTapGesture {
-                            self.memoryGame.choose(card)
+                            withAnimation(.linear(duration: self.flipDuration)) {
+                                self.memoryGame.choose(card)
+                            }
                     }
                     .padding(5)
                 }
@@ -26,12 +28,17 @@ struct MemoryGameView: View {
             .padding()
             .foregroundColor(memoryGame.color)
             .navigationBarTitle("Memory: \(memoryGame.themeName) - \(memoryGame.score)", displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: self.memoryGame.newGame) {
-                Text("New Game")
+            .navigationBarItems(trailing: Button("New Game") {
+                withAnimation(.easeInOut) {
+                    self.memoryGame.newGame()
+                }
             })
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    // MARK: - Drawing Constants
+    let flipDuration: Double = 0.4
 }
 
 struct MemoryGameView_Previews: PreviewProvider {
