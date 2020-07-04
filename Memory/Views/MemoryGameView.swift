@@ -28,6 +28,7 @@ struct MemoryGameView: View {
             .padding()
             .foregroundColor(memoryGame.color)
             .navigationBarTitle("Memory: \(memoryGame.themeName) - \(memoryGame.score)", displayMode: .inline)
+            .navigationBarColor(memoryGame.color)
             .navigationBarItems(trailing: Button("New Game") {
                 withAnimation(.easeInOut) {
                     self.memoryGame.newGame()
