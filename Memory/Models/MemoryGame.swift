@@ -10,11 +10,13 @@ import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     struct Card: Identifiable {
+        // automatically start/stop consuming bonus time
         var isFaceUp: Bool = false {
             didSet {
                 isFaceUp ? startUsingBonusTime() : stopUsingBonusTime()
             }
         }
+        // on match the consumation of bonus time only needs to be stopped
         var isMatched: Bool = false {
             didSet {
                 stopUsingBonusTime()
@@ -27,7 +29,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         // give bonus points when quickly matching cards
         
         // time limit, 0 = no bonus availble for the card
-        var bonusTimeLimit: TimeInterval = 5
+        var bonusTimeLimit: TimeInterval = 8
         
         // how long card has been face up
         private var faceUpTime: TimeInterval {
@@ -133,7 +135,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         self.theme = theme
 
         // if theme has a prefered number of pairs, use that, else random
-        let numberOfPairs = theme.numberOfPairsToShow ?? Int.random(in: 2...5)
+        let numberOfPairs = theme.numberOfPairsToShow ?? Int.random(in: 5...10)
         
         for pairIndex in 0 ..< numberOfPairs {
             let content = cardContentFactory(pairIndex)

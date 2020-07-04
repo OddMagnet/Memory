@@ -15,7 +15,9 @@ class EmojiMemoryGame: ObservableObject {
     // create an instance of the games model
     private static func createMemoryGame() -> MemoryGame<String> {
         
+        // take a random theme
         let emojiTheme = themes.randomElement()!
+        // and use a shuffled version of it's emojis
         let emojis = emojiTheme.emojis.shuffled()
         
         return MemoryGame<String>(theme: emojiTheme) { index in
@@ -28,7 +30,7 @@ class EmojiMemoryGame: ObservableObject {
         memoryGame.cards
     }
     
-    var color: Color {
+    var themeColor: Color {
         memoryGame.theme.color
     }
     

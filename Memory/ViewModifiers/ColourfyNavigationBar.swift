@@ -28,7 +28,7 @@ struct ColourifyNavigationBar: ViewModifier {
         colouredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         colouredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
-        // apply it to all possible navigation bar appearance styles
+        // apply it to all possible navigation bar appearance styles (future-proofing)
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.standardAppearance = colouredAppearance
         navigationBarAppearance.compactAppearance = colouredAppearance
