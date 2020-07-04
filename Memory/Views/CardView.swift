@@ -20,16 +20,17 @@ struct CardView: View {
     
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
+        // only show a card when it's either face up or unmatched
         if card.isFaceUp || !card.isMatched {
             ZStack {
-                Group {
-                if card.isConsumingBonusTime {
-                    PieView(startAngle: .degrees(0 - angleOffset),
-                            endAngle: .degrees(-animatedBonusRemaining * 360 - angleOffset))
-                        .onAppear(perform: startBonusTimeAnimation)
-                } else {
-                    PieView(startAngle: .degrees(0 - angleOffset),
-                            endAngle: .degrees(-card.bonusRemaining * 360 - angleOffset))
+                Group { // bonus time shown as a "pie chart"
+                    if card.isConsumingBonusTime {
+                        PieView(startAngle: .degrees(0 - angleOffset),
+                                endAngle: .degrees(-animatedBonusRemaining * 360 - angleOffset))
+                            .onAppear(perform: startBonusTimeAnimation)
+                    } else {
+                        PieView(startAngle: .degrees(0 - angleOffset),
+                                endAngle: .degrees(-card.bonusRemaining * 360 - angleOffset))
                     }
                 }
                 .opacity(pieOpacity)
