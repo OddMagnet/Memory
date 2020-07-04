@@ -24,6 +24,8 @@ There will be ingame ads since I personally dislike them, instead I'm opting for
 - different game modes: emoji, words, math (for learning)
 - even better visuals (card-backs, game-board)
 - adjustments for light/dark mode
+- multiplayer
+- translations
 
 ## Credits
 For license see the license files.
