@@ -17,7 +17,7 @@ struct CardView: View {
         }
     }
     
-    func body(for size: CGSize) -> some View {
+    private func body(for size: CGSize) -> some View {
         ZStack {
             if card.isFaceUp {
                 RoundedRectangle(cornerRadius: cornerRadius)
@@ -37,10 +37,9 @@ struct CardView: View {
     }
     
     // MARK: - Drawing constants
-    
-    let cornerRadius: CGFloat = 10.0
-    let edgeLineWidth: CGFloat = 3
-    let fontScaling: CGFloat = 0.75
+    private let cornerRadius: CGFloat = 10.0
+    private let edgeLineWidth: CGFloat = 3
+    private let fontScaling: CGFloat = 0.75
     
     func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScaling

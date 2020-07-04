@@ -16,12 +16,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var id: Int
     }
     
-    var cards: [Card]
-    var theme: Theme
-    var score = 0
-    var seenCards = Set<Int>()
+    private(set) var cards: [Card]
+    private(set) var theme: Theme
+    private(set) var score = 0
+    private var seenCards = Set<Int>()
     
-    var indexOfOnlyFaceUpCard: Int? {
+    private var indexOfOnlyFaceUpCard: Int? {
         // on get return the index of the only face up card or nil if multiple
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
         // on set, only keep the card with the new index face up
