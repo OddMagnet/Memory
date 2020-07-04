@@ -17,23 +17,23 @@ struct Theme {
 
 let themes = [halloween, gaming, animals, christmas, food, vehicles, faces]
 
-let halloween = Theme(name: "Halloween", emojis: ["👻", "🎃", "🕷", "🕸", "🦇", "💀", "👽", "🧙", "🧝", "🧛", "🧟", "👺", "🍬", "🍭", "🧠", "😈"],      // 15
-                      numberOfPairsToShow: nil, color: .orange)
+let halloween = Theme(name: "Halloween", emojis: ["👻", "🎃", "🕷", "🕸", "🦇", "💀", "👽", "🧙", "🧝", "🧛", "🧟", "👺", "🍬", "🍭", "🧠", "😈", "🤖"], // 16
+                      numberOfPairsToShow: 16, color: .orange)
 
-let gaming = Theme(name: "Gaming", emojis: ["🎮", "🕹", "🎳", "🎰", "👾", "🎲", "🤖", "🏈", "🏓", "🖥", "🎯", "🃏", "♟", "🀄️", "⚽️"],                   // 15
-                   numberOfPairsToShow: 5, color: .blue)
+let gaming = Theme(name: "Gaming", emojis: ["🎮", "🕹", "🎳", "👾", "🎲", "🤖", "🏈", "🏓", "🖥", "🎯", "🃏", "♟", "⚽️", "♣️", "♦️", "♠️"],              // 16
+                   numberOfPairsToShow: 16, color: .blue)
 
-let animals = Theme(name: "Animals", emojis: ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐼", "🐨", "🐯", "🦁", "🐮", "🐸", "🐵", "🐤", "🐋"],                // 15
-                    numberOfPairsToShow: 5, color: .yellow)
+let animals = Theme(name: "Animals", emojis: ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐼", "🐨", "🐯", "🦁", "🐮", "🐸", "🐵", "🐤", "🐋", "🦔"],          // 16
+                    numberOfPairsToShow: 16, color: .yellow)
 
-let christmas = Theme(name: "Christmas", emojis: ["🤶🏻", "🎅🏻", "🎄", "⛄️", "☃️", "❄️", "🎁", "⛪️", "🌨", "🥶", "🏂", "🥳", "🎉", "⛷", "🌲"],            // 15
-                      numberOfPairsToShow: 5, color: .red)
+let christmas = Theme(name: "Christmas", emojis: ["🤶🏻", "🎅🏻", "🎄", "☃️", "❄️", "🎁", "⛪️", "🌨", "🥶", "🏂", "🥳", "🎉", "⛷", "😇", "🛍", "💫"],       // 16
+                      numberOfPairsToShow: 16, color: .red)
 
-let food = Theme(name: "Food", emojis: ["🍏", "🍐", "🍊", "🍌", "🍋", "🍉", "🍇", "🍓", "🍒", "🥦", "🥕", "🧀", "🥞", "🍔", "🍕"],                      // 15
-                 numberOfPairsToShow: 5, color: .purple)
+let food = Theme(name: "Food", emojis: ["🍏", "🍐", "🍊", "🍌", "🍋", "🍉", "🍇", "🍓", "🍒", "🥦", "🥕", "🧀", "🥞", "🍔", "🍕", "🥝"],                 // 16
+                 numberOfPairsToShow: 16, color: .purple)
 
-let vehicles = Theme(name: "Vehicles", emojis: ["🚗", "🚎", "🏎", "🚓", "🚑", "🚒", "🚜", "🚂", "✈️", "🚀", "🛸", "🚁", "⛵️", "🛳", "🛶"],              // 15
-                     numberOfPairsToShow: 5, color: .pink)
+let vehicles = Theme(name: "Vehicles", emojis: ["🚗", "🚎", "🏎", "🚓", "🚑", "🚒", "🚜", "🚂", "✈️", "🚀", "🛸", "🚁", "⛵️", "🛳", "🛶", "🚲"],         // 16
+                     numberOfPairsToShow: 16, color: .pink)
 
-let faces = Theme(name: "Faces", emojis: ["😀", "😅", "🤣", "😇", "😉", "😍", "😘", "😝", "🤪", "😎", "😡", "😳", "🥶", "🤢", "👹"],                    // 15
-                  numberOfPairsToShow: 5, color: .green)
+let faces = Theme(name: "Faces", emojis: ["😀", "😅", "🤣", "😇", "😉", "😍", "😘", "😝", "🤪", "😎", "😡", "😳", "🥶", "🤢", "👹", "💩"],               // 16
+                  numberOfPairsToShow: 16, color: .green)
