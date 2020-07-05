@@ -2,8 +2,11 @@
 
 ## Overview
 A game based on the classical game of **Concentration**, also known under the names __Match Match, Match Up, Memory, Pairs__ and more names in non-englisch languages.[Source](https://en.wikipedia.org/wiki/Concentration_(card_game))
+
 Initial idea and code based on the 2020 CS192p course of Stanford University, see [here](https://cs193p.sites.stanford.edu/)
-Completed and expended by myself, see [Features](#Expanded)
+
+Completed and expanded by myself, see [Features](#Expanded)
+
 
 ## Free and open source
 Currently I'm planning to release this game for free in the App Store once I feel it's polished enough.
