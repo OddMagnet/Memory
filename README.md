@@ -10,7 +10,8 @@ Completed and expanded by myself, see [Features](#Expanded)
 
 ## Free and open source
 Currently I'm planning to release this game for free in the App Store once I feel it's polished enough.
-There will be ingame ads since I personally dislike them, instead I'm opting for a donation model
+
+There won't be ingame ads since I personally dislike them, instead opting for a donation model (In-App purchases that only serve to donate)
 
 ## Features
 ### Initial
